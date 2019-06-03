@@ -45,6 +45,12 @@ APISERVER=https://$(kubectl -n default get endpoints kubernetes --no-headers | a
 ```
 
 ## Explore the Agones API
+To list fleets:
 ```
 curl $APISERVER/apis/stable.agones.dev/v1alpha1/namespaces/default/fleets  --header "Authorization: Bearer $TOKEN" --cacert /tmp/ca.crt
+```
+
+To list gameservers:
+```
+curl $APISERVER/apis/stable.agones.dev/v1alpha1/namespaces/default/gameservers  --header "Authorization: Bearer $TOKEN" --cacert /tmp/ca.crt
 ```
